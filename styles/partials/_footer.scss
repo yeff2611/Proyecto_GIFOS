@@ -1,0 +1,30 @@
+// Estilos footer
+.footer {
+  padding: 50px 0 50px 0;
+}
+.footer__contact {
+  display: flex;
+  justify-content: space-between;
+  p {
+    font-size: 13px;
+    color: $secondary-color;
+    font-weight: bold;
+  }
+  .compartir_footer {
+    margin-left: 150px;
+  }
+  .copyright {
+    margin-right: 150px;
+  }
+  .iconos_footer {
+    margin-right: 750px;
+  }
+}
+.footer__container-icons {
+  padding: 5px;
+  width: 18px;
+  height: 28px;
+  a {
+    text-decoration: none;
+  }
+}

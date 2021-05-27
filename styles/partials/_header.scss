@@ -1,0 +1,42 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 70px;
+  .nav__logo {
+    margin-left: 100px;
+  }
+  .nav__lista {
+    list-style: none;
+    margin-left: 550px;
+    padding: 0;
+    width: 35%;
+    display: flex;
+    text-align: center;
+    li {
+      width: 165px;
+      span {
+        &:hover {
+          border-bottom: 1px solid $fourth-color;
+          border-bottom-width: 3px;
+          // border-bottom-width: 5px;
+        }
+        &:active {
+          color: $sixth-color;
+        }
+      }
+    }
+    .nav__items {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+  .nav__cta {
+    img {
+      margin-right: 150px;
+    }
+  }
+}

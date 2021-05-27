@@ -1,0 +1,358 @@
+.titulo__buscador {
+  text-align: center;
+  margin-left: -90px;
+  padding-right: 190px;
+  font-size: 2.19rem;
+  width: 780px;
+}
+.buscador {
+  padding-left: 35%;
+  img {
+    margin-top: 30px;
+  }
+  input {
+    position: absolute;
+    width: 540px;
+    height: 40px;
+    border-color: $primary-color;
+    border-radius: 18px;
+    top: 457px;
+    left: 32%;
+    padding-left: 0;
+    font-size: 16px;
+    padding-left: 15px;
+  }
+  #boton-buscar {
+    position: absolute;
+    margin-top: 0;
+    height: 20px;
+    top: 465px;
+    left: 980px;
+    cursor: pointer;
+  }
+  /*Lista autocompletar*/
+  .autocomplete {
+    display: none;
+    position: relative;
+    top: 15;
+    right: 65px;
+    margin-left: 0;
+    line-height: 25px;
+    border: 1px solid $primary-color;
+    border-radius: 18px;
+    width: 540px;
+    padding: 40px 10px 10px 10px;
+    z-index: -1;
+    // border-bottom: 1px solid gray;
+    li {
+      list-style: none;
+    }
+  }
+  .trending__container {
+    margin-top: 105px;
+    margin-bottom: 80px;
+    text-align: center;
+    #trending_titulo {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    #trending_texto {
+      padding-top: 10px;
+      font-size: 16px;
+    }
+    p {
+      width: 400px;
+    }
+  }
+}
+.btn-vermas {
+  border: 1px solid $primary-color;
+  margin-top: 120px;
+  margin-left: 138px;
+  width: 127px;
+  height: 50px;
+  text-align: center;
+  border-radius: 25px;
+  cursor: pointer;
+  display: none;
+  &:hover {
+    background-color: $primary-color;
+    color: $fifth-color;
+  }
+  p {
+    padding-top: 15px;
+    font-weight: bold;
+    border-radius: 25px;
+    width: 127px;
+    height: 50px;
+    // border: 1px solid red;
+    &:hover {
+      color: $fifth-color;
+    }
+  }
+}
+
+// Sección trending GIFOS
+.carousel {
+  height: 640px;
+  background-color: $third-color;
+  text-align: center;
+  margin-top: 45px;
+  .flechas {
+    width: 80%;
+    top: 0;
+    left: 140px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .btn-flecha {
+      // margin-top: 70px;
+      position: relative;
+      bottom: 130px;
+      cursor: pointer;
+      border: 1px solid $primary-color;
+      height: 40px;
+      width: 40px;
+      &:hover {
+        background-color: $primary-color;
+        i {
+          color: $fifth-color;
+        }
+      }
+      i {
+        font-size: 20px;
+        padding-top: 2px;
+      }
+    }
+  }
+  .titulo__carousel {
+    font-size: 25px;
+    margin-top: 60px;
+    padding-bottom: 25px;
+  }
+  .descripcion__carousel {
+    font-size: 18px;
+    color: $secondary-color;
+    padding-bottom: 50px;
+  }
+  .carousel_content {
+    margin-left: 4.5%;
+    width: 90%;
+    height: 275px;
+    width: 1075px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 130px;
+  }
+}
+
+/* resultados GIPHY trending*/
+.contenedor-carousel {
+  height: 275px;
+  width: 1080px;
+  overflow: hidden;
+  // overflow-x: scroll;
+  scroll-behavior: smooth;
+  .carousel {
+    height: 275px;
+    display: flex;
+    flex-wrap: nowrap;
+
+    .cont__img {
+      &:hover {
+        .icons_carousel-hover {
+          position: absolute;
+          background-color: $primary-color;
+          opacity: 0.6;
+          top: 10px;
+          left: 10px;
+          width: 94%;
+          height: 210px;
+          display: flex;
+          justify-content: flex-end;
+          a {
+            color: $primary-color;
+            background-color: $fifth-color;
+            padding-top: 8px;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            margin-right: 8px;
+            margin-top: 10px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .cont__img {
+      position: relative;
+      img {
+        // position: relative;
+        bottom: 45px;
+        width: 357px;
+        height: 230px;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+//************************************
+// Estilos pagina favoritos
+//************************************
+.favoritos {
+  padding-left: 35%;
+  .icon_favoritos {
+    margin-left: 20%;
+    padding-bottom: 5px;
+  }
+  .titulo__favoritos {
+    margin-left: 16%;
+    padding-bottom: 150px;
+  }
+  .icon_fav_sin_contenido {
+    margin-left: 13.5%;
+    padding-bottom: 30px;
+  }
+  #descripcionFavoritos {
+    text-align: center;
+    font-size: 22px;
+    width: 431px;
+    margin-bottom: 100px;
+    color: $fourth-color;
+    font-weight: bold;
+  }
+}
+
+//************************************
+// Estilos pagina Mis Gifos
+//************************************
+.gifos {
+  padding-left: 35%;
+  .icon_gifos {
+    margin-left: 19.8%;
+    padding-bottom: 5px;
+  }
+  .titulo__gifos {
+    margin-left: 15%;
+    padding-bottom: 150px;
+  }
+  .icon_gif_sin_contenido {
+    margin-left: 13%;
+    padding-bottom: 30px;
+  }
+  #descripcionGifos {
+    text-align: center;
+    font-size: 22px;
+    width: 431px;
+    margin-bottom: 100px;
+    color: $fourth-color;
+    font-weight: bold;
+  }
+}
+
+// Estilos crea tu gifo
+%titulo_creagifo {
+  font-size: 25px;
+  text-align: center;
+  width: 220px;
+  height: 70px;
+  margin: 110px 0 0 240px;
+  line-height: 35px;
+}
+
+.creagifos {
+  margin-left: 480px;
+  .rectanguloCam {
+    width: 688px;
+    height: 390px;
+    border: 1px solid $primary-color;
+    //aqui
+    .paso-uno {
+      @extend %titulo_creagifo;
+      width: 300px;
+      margin-left: 200px;
+      span {
+        color: $fourth-color;
+      }
+    }
+    p {
+      text-align: center;
+      line-height: 20px;
+      margin-top: 10px;
+      color: $secondary-color;
+    }
+    .contenedor-video {
+      position: relative;
+      bottom: 242px;
+      left: 52px;
+      width: 580px;
+      height: 390px;
+      #video {
+        width: 580px;
+        height: 390px;
+      }
+    }
+  }
+  .controles-camara {
+    margin-top: 45px;
+    margin-bottom: 35px;
+    .pasos_grabacion {
+      position: relative;
+      left: 250px;
+      bottom: 25px;
+      .btn_pasos_grabacion {
+        height: 10px;
+        width: 30px;
+        padding: 4px 10px;
+        margin-left: 30px;
+        border: 1px solid $primary-color;
+        margin-right: 5px;
+        border-radius: 100%;
+      }
+    }
+    .linea-horizontal {
+      position: relative;
+      height: 6.9px;
+      width: 795.9px;
+      border: 1px solid $primary-color;
+      background-color: $primary-color;
+      right: 100px;
+      bottom: 8px;
+    }
+    .botones_grabacion {
+      margin-top: 20px;
+      #btn-comenzar {
+        border: 1px solid $primary-color;
+        border-radius: 25px;
+        font-size: 13px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 10px;
+        position: relative;
+        left: 305px;
+      }
+    }
+  }
+}
+
+/*Regusltados de búsqueda GIPHY*/
+.gif__container {
+  position: relative;
+  top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  right: 285px;
+  z-index: inherit;
+  img {
+    width: 260px;
+    height: 200px;
+    display: flex;
+    align-content: center;
+    margin-top: 0;
+    padding: 20px 20px 20px 0;
+  }
+}
