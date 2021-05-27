@@ -13,6 +13,7 @@ function sendApiRequestTrending(){
             let imgPath = json.data[i].images.fixed_height.url;
             let divImg = document.createElement("div");
             divImg.classList.add('cont__img');
+            divImg.id = "cont__img";
             let img = document.createElement("img");  
             img.classList.add("img_carousel");
             img.setAttribute("src", imgPath);
@@ -25,7 +26,6 @@ function sendApiRequestTrending(){
             let iconDescarga = document.createElement('a');
             iconDescarga.classList.add('fas','fa-download', 'icon_descarga');
             iconDescarga.id=i;//"icon_descarga";
-            iconDescarga.href=imgPath;
             let iconExpand = document.createElement('a');
             iconExpand.classList.add('fas','fa-expand-alt');
 
@@ -37,27 +37,7 @@ function sendApiRequestTrending(){
             divIcons.insertAdjacentElement('beforeend', iconDescarga);
             divIcons.insertAdjacentElement('beforeend',iconExpand);
             // console.log(json)
-
         }
-
-        
-        // function capturaObjetosClick(e){
-        //     let haHechoClick;
-        //     try {
-        //         haHechoClick = e.target
-        //         let index =haHechoClick.getAttribute("id");
-        //         // console.log(haHechoClick);
-        //         // console.log(conimg[index])
-        //         console.log(conimg[index].src);
-        //         urlGifo=conimg[index].src;
-        //         // let linkGifo = conimg[index].src;
-        //         // let response = await fetch(linkGifo)
-        //         // let file = await response.blob();
-        //         // linkGifo.download = "miGif";
-        //     } catch (error) {
-        //         console.log(error)
-        //     }
-        // }
     });
 }
 sendApiRequestTrending();
