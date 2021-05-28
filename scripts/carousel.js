@@ -38,6 +38,15 @@ function sendApiRequestTrending(){
             divIcons.insertAdjacentElement('beforeend',iconExpand);
             // console.log(json)
         }
+         btn_descarga = document.querySelector(".icon_descarga");
+        // btn_descarga.addEventListener("click", ()=>{    
+        //     let padre =  btn_descarga.parentNode;
+        //     let padreppal =  padre.parentNode;
+        //     let primerHijo =  padreppal.firstChild;
+        //     console.log(primerHijo.src)
+        // })
+        contenido_carousel.addEventListener("click", capturaObjetosClick);
+        // contenido_carousel.addEventListener("click", descargaGif);
     });
 }
 sendApiRequestTrending();
