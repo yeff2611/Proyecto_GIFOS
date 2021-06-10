@@ -34,16 +34,16 @@
   .autocomplete {
     display: none;
     position: relative;
-    top: 15;
+    top: 40px;
     right: 65px;
     margin-left: 0;
     line-height: 25px;
     border: 1px solid $primary-color;
     border-radius: 18px;
     width: 540px;
-    padding: 40px 10px 10px 10px;
-    z-index: -1;
-    // border-bottom: 1px solid gray;
+    padding: 0px 10px 10px 10px;
+    cursor: pointer;
+    // z-index: -1;
     li {
       list-style: none;
     }
@@ -339,20 +339,36 @@
   }
 }
 
-/*Regusltados de búsqueda GIPHY*/
-.gif__container {
+%Estilos_Container_Gifos {
   position: relative;
-  top: 50px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  right: 285px;
   z-index: inherit;
+}
+%Estilos_Img_Container_gif {
+  width: 260px;
+  height: 200px;
+  display: flex;
+  align-content: center;
+  margin-top: 0;
+  padding: 20px 20px 20px 0;
+}
+
+/*Resultados de búsqueda GIPHY*/
+.gif__container {
+  @extend %Estilos_Container_Gifos;
+  top: 50px;
+  right: 285px;
   img {
-    width: 260px;
-    height: 200px;
-    display: flex;
-    align-content: center;
-    margin-top: 0;
-    padding: 20px 20px 20px 0;
+    @extend %Estilos_Img_Container_gif;
+  }
+}
+
+.listaGifos {
+  @extend %Estilos_Container_Gifos;
+  width: 980px;
+  left: 250px;
+  img {
+    @extend %Estilos_Img_Container_gif;
   }
 }

@@ -24,12 +24,19 @@ function sendApiRequestTags(){
                 let term = json.data[i].name;
                 let list = document.createElement("li");            
                 list.classList.add("list_autocomplete");
+                list.id=i;
                 list.innerHTML = term;
                 listAutocomplete.insertAdjacentElement('beforeend', list);
             }
+                    //////////
+
         }
 
+
     });
+
+
+
 }
 
 let btnBuscar2 = document.getElementById("boton-buscar");
@@ -38,16 +45,28 @@ let container_autocomplete = document.getElementsByClassName("autocomplete");
 search.addEventListener('keyup', ()=>{    
     if (search.value!=="") {
         sendApiRequestTags();
-        container_autocomplete[0].style.display ="block";
-
-        let listaHijos = document.querySelectorAll("ul.autocomplete-lista-palabras > li");
-
-        for (lista of listaHijos) {
-            lista.addEventListener("click", function(evt){
-                let list = evt.target;
-                console.log("click en" +list);
-            })    
-        }
+        container_autocomplete[0].style.display ="block";  
+        let li = document.getElementById("list_autocomplete")
+        li.addEventListener("click", ()=>{
+            console.log(li.value)
+        })      
+        // let autcompleteList = document.getElementById("autocomplete-lista-palabras");
+        // let list = document.querySelector(".list_autocomplete");
+        // list.addEventListener("click", () =>{
+        //     let click;
+        //     function capturaClick(evt){
+        //         try {
+        //             click = evt.target;
+        //             let id = click.getAttribute("id");
+        //             let classLi = document.getElementsByClassName("list_autocomplete");
+        //             let palabra = classLi[click];
+        //             console.log(palabra);
+        //         } catch (error) {
+                    
+        //         }
+        //     }
+        
+        // })
     }else{
         autcompleteBar[0].style.display="none";
     }

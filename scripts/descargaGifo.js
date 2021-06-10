@@ -2,6 +2,7 @@ let contenidoImagenes = document.getElementsByClassName("img_carousel");
 let contenido_carousel = document.getElementById("carousel");
 let btn_descarga
 let urlGifo; 
+// let vector_gifos = [];
 
 function descargaGif(){
     try {
@@ -18,3 +19,24 @@ function descargaGif(){
         console.log(error)
     }
 }
+
+//captura los objetos al clickearlos
+let haHechoClick;
+let classBoton;
+let index;
+function capturaObjetosClick(e){    
+    try {
+        let btn_fav = document.querySelector
+        haHechoClick = e.target
+        index = haHechoClick.getAttribute("id");
+        classBoton = haHechoClick.getAttribute("class");
+        if (classBoton === "fas fa-download icon_descarga") {
+            urlGifo=contenidoImagenes[index].src;
+            descargaGif()
+        }
+        guardaGif_LocalStorage();
+        // capturaObjetosClickFav()
+    } catch (error) {
+        console.log(error)
+    }
+}   

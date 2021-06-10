@@ -22,10 +22,11 @@ function sendApiRequestTrending(){
             let divIcons = document.createElement('span');
             divIcons.classList.add('icons_carousel-hover');
             let iconFavoritos = document.createElement('a');
-            iconFavoritos.classList.add('fas','fa-heart');  
+            iconFavoritos.classList.add('fas','fa-heart', 'icon-fav');
             let iconDescarga = document.createElement('a');
             iconDescarga.classList.add('fas','fa-download', 'icon_descarga');
             iconDescarga.id=i;//"icon_descarga";
+            iconFavoritos.id=i;
             let iconExpand = document.createElement('a');
             iconExpand.classList.add('fas','fa-expand-alt');
 

@@ -111,15 +111,15 @@
 .buscador .autocomplete {
   display: none;
   position: relative;
-  top: 15;
+  top: 40px;
   right: 65px;
   margin-left: 0;
   line-height: 25px;
   border: 1px solid #572ee5;
   border-radius: 18px;
   width: 540px;
-  padding: 40px 10px 10px 10px;
-  z-index: -1;
+  padding: 0px 10px 10px 10px;
+  cursor: pointer;
 }
 
 .buscador .autocomplete li {
@@ -454,19 +454,16 @@
   left: 305px;
 }
 
-/*Regusltados de búsqueda GIPHY*/
-.gif__container {
+.gif__container, .listaGifos {
   position: relative;
-  top: 50px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  right: 285px;
   z-index: inherit;
 }
 
-.gif__container img {
+.gif__container img, .listaGifos img {
   width: 260px;
   height: 200px;
   display: -webkit-box;
@@ -476,6 +473,17 @@
       align-content: center;
   margin-top: 0;
   padding: 20px 20px 20px 0;
+}
+
+/*Resultados de búsqueda GIPHY*/
+.gif__container {
+  top: 50px;
+  right: 285px;
+}
+
+.listaGifos {
+  width: 980px;
+  left: 250px;
 }
 
 .footer {

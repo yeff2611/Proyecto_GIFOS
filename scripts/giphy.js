@@ -22,6 +22,7 @@ function sendApiRequest(){
     
 }
 
+
 btnBuscar.addEventListener('click', () => {    
     sendApiRequest();
 });
