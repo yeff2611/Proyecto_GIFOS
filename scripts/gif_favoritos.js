@@ -45,3 +45,7 @@ function guardaGif_LocalStorage(){
 }   
 
 
+const pintarGifDom = () =>{
+    
+}
+

@@ -1,13 +1,9 @@
+let click;
 let listAutocomplete = document.getElementById("autocomplete-lista-palabras");
 let search = document.getElementById("search");
-let autcompleteBar = document.getElementsByClassName("autocomplete");
-
-
-function removeAllChild(parent){
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
-}
+let resultadoSearch = document.getElementsByClassName("gif__container");
+let btnBuscar2 = document.getElementById("boton-buscar");
+let container_autocomplete = document.getElementsByClassName("autocomplete");
 
 function sendApiRequestTags(){
     let txtSearch = search.value;
@@ -17,7 +13,6 @@ function sendApiRequestTags(){
         return data.json()
     })
     .then(function(json){   
-        // console.log(json.data[0]);
         removeAllChild(listAutocomplete);
         if (json.data[0] !== undefined) {
             for (let i = 0; i < 5; i++) {
@@ -28,19 +23,9 @@ function sendApiRequestTags(){
                 list.innerHTML = term;
                 listAutocomplete.insertAdjacentElement('beforeend', list);
             }
-                    //////////
-
         }
-
-
     });
-
-
-
 }
-
-let btnBuscar2 = document.getElementById("boton-buscar");
-let container_autocomplete = document.getElementsByClassName("autocomplete");
 
 search.addEventListener('keyup', ()=>{    
     if (search.value!=="") {
@@ -50,27 +35,21 @@ search.addEventListener('keyup', ()=>{
         li.addEventListener("click", ()=>{
             console.log(li.value)
         })      
-        // let autcompleteList = document.getElementById("autocomplete-lista-palabras");
-        // let list = document.querySelector(".list_autocomplete");
-        // list.addEventListener("click", () =>{
-        //     let click;
-        //     function capturaClick(evt){
-        //         try {
-        //             click = evt.target;
-        //             let id = click.getAttribute("id");
-        //             let classLi = document.getElementsByClassName("list_autocomplete");
-        //             let palabra = classLi[click];
-        //             console.log(palabra);
-        //         } catch (error) {
-                    
-        //         }
-        //     }
-        
-        // })
+
     }else{
-        autcompleteBar[0].style.display="none";
+        container_autocomplete[0].style.display="none";
     }
-
-
 })
 
+function capturaPalabra(evt){
+    click = evt.target;
+    console.log(click.innerText);
+    search.value = click.innerText;
+    removeAllChild(resultadoSearch[0]);
+    sendApiRequest();
+    container_autocomplete[0].style.display="none";
+    btnBuscar.style.display = "none";
+    btn_borra_busqueda.style.display = "block";
+}
+
+listAutocomplete.addEventListener("click", capturaPalabra)

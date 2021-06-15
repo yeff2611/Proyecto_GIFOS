@@ -99,13 +99,18 @@
   padding-left: 15px;
 }
 
-.buscador #boton-buscar {
+.buscador #boton-buscar, .buscador #btn-borrar-busqueda {
   position: absolute;
   margin-top: 0;
   height: 20px;
   top: 465px;
   left: 980px;
   cursor: pointer;
+}
+
+.buscador #btn-borrar-busqueda {
+  font-size: 22px;
+  display: none;
 }
 
 .buscador .autocomplete {
@@ -484,6 +489,24 @@
 .listaGifos {
   width: 980px;
   left: 250px;
+}
+
+.sin_resultados_container img {
+  position: relative;
+  left: 130px;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.sin_resultados_container .sin_resultados {
+  position: relative;
+  width: 310px;
+  left: 55px;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 25px;
+  text-align: center;
+  color: #50e3c2;
 }
 
 .footer {

@@ -26,7 +26,7 @@ let classBoton;
 let index;
 function capturaObjetosClick(e){    
     try {
-        let btn_fav = document.querySelector
+        // let btn_fav = document.querySelector
         haHechoClick = e.target
         index = haHechoClick.getAttribute("id");
         classBoton = haHechoClick.getAttribute("class");
@@ -35,7 +35,6 @@ function capturaObjetosClick(e){
             descargaGif()
         }
         guardaGif_LocalStorage();
-        // capturaObjetosClickFav()
     } catch (error) {
         console.log(error)
     }
