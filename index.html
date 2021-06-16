@@ -12,9 +12,9 @@
         <div class="container">
             <nav class="navbar">
                 <!-- logo -->
-                <a href="./index.html"><img src="./assets/logo-desktop.svg" alt="Logo Gifos" class="nav__logo"></a>
+                <a><img src="./assets/logo-desktop.svg" alt="Logo Gifos" id="nav__logo" class="nav__logo"></a>
                 <ul class="nav__lista">
-                    <li><a class="nav__items" href=""> <span>MODO NOCTURNO</span> </a></li>
+                    <li class="nav__items" id="btn-nocturno"><span>MODO NOCTURNO</span></li>
                     <li class="nav__items" id="nav_favoritos"><span>FAVORITOS</span></li>
                     <li class="nav__items" id="nav_misGifos"><span>MIS GIFOS</span></li>
                 </ul>
@@ -47,8 +47,11 @@
             <div class="sin_resultados_container"></div>
         </section>
         <!-- Sección favoritos -->
-        <section class="favoritos container" id="favoritos"></section>
+        <section class="favoritos container" id="favoritos">
+            
+        </section>
         <div id="listaGifos" class="listaGifos"></div>
+        
         <!-- Sección Mis Gifos -->
         <section class="gifos container" id="misGifos">
         </section>
@@ -97,7 +100,8 @@
     <script src="./scripts/autocomplete.js"></script>
     <script src="./scripts/descargaGifo.js"></script>
     <script src="./scripts/gif_favoritos.js"></script>
-    <script src="./scripts/Captura_Objetos_Click.js"></script>    
+    <script src="./scripts/Captura_Objetos_Click.js"></script>  
+    <script src="./scripts/modo_nocturno.js"></script>  
     
 </body>
 </html>

@@ -32,6 +32,7 @@
 
 .navbar .nav__logo {
   margin-left: 100px;
+  cursor: pointer;
 }
 
 .navbar .nav__lista {
@@ -507,6 +508,55 @@
   line-height: 25px;
   text-align: center;
   color: #50e3c2;
+}
+
+body {
+  -webkit-transition: 0.4s ease all;
+  transition: 0.4s ease all;
+}
+
+body.nocturno {
+  background: #37383c;
+}
+
+body.nocturno #misGifos h1 {
+  color: #ffff;
+}
+
+body.nocturno #misGifos p {
+  color: #ffff;
+}
+
+body.nocturno .titulo__buscador {
+  color: #ffff;
+}
+
+body.nocturno .nav__lista li span {
+  color: #f3f5f8;
+}
+
+body.nocturno #trending_titulo {
+  color: #ffff;
+}
+
+body.nocturno #trending_texto {
+  color: #ffff;
+}
+
+body.nocturno .carousel {
+  background: #222326;
+}
+
+body.nocturno .carousel .titulo__carousel {
+  color: #f3f5f8;
+}
+
+body.nocturno .carousel .descripcion__carousel {
+  color: #f3f5f8;
+}
+
+body.nocturno .footer__contact p {
+  color: #ffff;
 }
 
 .footer {

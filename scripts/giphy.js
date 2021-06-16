@@ -31,7 +31,7 @@ function sendApiRequest(){
             container_sin_resultados[0].insertAdjacentElement("beforeend", img_sin_resultado);
             container_sin_resultados[0].insertAdjacentElement("beforeend", alerta);
         }else{
-            limpiaBusqueda()
+            // limpiaBusqueda()
             for (let i = 0; i < 12; i++) {                
                 let random = parseInt(Math.random() * 50);
                 let imgPath = json.data[random].images.fixed_height.url;
@@ -53,15 +53,17 @@ btnBuscar.addEventListener('click', () => {
     container_autocomplete[0].style.display="none";
     btnBuscar.style.display = "none";
     btn_borra_busqueda.style.display = "block";
+    btn_borra_busqueda.style.transition="0.5s ease all";
 });
 btnVerMas[0].addEventListener('click', () => {
     sendApiRequest();
 });
 
-btn_borra_busqueda.addEventListener("click", ()=>{
+btn_borra_busqueda.addEventListener("click", ()=>{    
     limpiaBusqueda();
-    search.value="";
-    btnBuscar.style.display = "block";
+    search.value="";    
+    btnBuscar.style.display = "block";    
     btn_borra_busqueda.style.display = "none";
+    btn_borra_busqueda.style.transition="0.5s ease all";
 })
 

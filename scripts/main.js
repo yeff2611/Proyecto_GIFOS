@@ -4,7 +4,7 @@ let favoritos = document.querySelector('#favoritos');
 const elementBuscador = document.getElementsByClassName('buscador');
 const seccionGifosContainer = document.getElementById("misGifos");
 let listaGifs = document.getElementById('listaGifos');
-
+let Logo = document.getElementById("nav__logo");
 /*********************************************** */
 /**Función eliminar todos los hijos del padre */
 /*********************************************** */
@@ -13,11 +13,29 @@ function removeAllChild(parent){
         parent.removeChild(parent.firstChild);
     }
 }
+const seccionIndex = () =>{
+    removeAllChild(listaGifs);
+    removeAllChild(favoritos);
+    removeAllChild(seccionGifosContainer);
+    limpiaBusqueda();
+    search.value="";    
+    btnBuscar.style.display = "block";    
+    btn_borra_busqueda.style.display = "none";
+    elementBuscador[0].style.display = 'block'
+
+    // elementBuscador[0].display.style = 'block'
+    // removeAllChild(favoritos);
+    // alert("hola")
+}
+
+Logo.addEventListener('click', seccionIndex);
+
 /***************************** */
 /********Sección favoritos******/
 /***************************** */
 const seccionFavoritos = ()=>{
-    removeAllChild(elementBuscador[0]);
+    // removeAllChild(elementBuscador[0]);
+    elementBuscador[0].style.display = 'none'
     removeAllChild(seccionGifosContainer);
     if (localStorage.getItem('gifos') === null) {
         listaGifs.innerHTML = '';
@@ -52,7 +70,6 @@ const seccionFavoritos = ()=>{
 }
 
 btnFavoritos.addEventListener('click',()=>{
-
     seccionFavoritos();
 });
 
@@ -62,7 +79,7 @@ btnFavoritos.addEventListener('click',()=>{
 
 const seccionMiGifos = ()=>{
     listaGifs.innerHTML = '';
-    removeAllChild(elementBuscador[0]);
+    elementBuscador[0].style.display = 'none';
     removeAllChild(favoritos);
     if (!document.querySelector(".icon_gifos")) {  
         let srcLogoMisGifos = "./assets/icon-mis-gifos.svg";

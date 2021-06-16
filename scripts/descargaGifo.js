@@ -34,6 +34,7 @@ function capturaObjetosClick(e){
             urlGifo=contenidoImagenes[index].src;
             descargaGif()
         }
+        /*Guarda gif en favoritos*/
         guardaGif_LocalStorage();
     } catch (error) {
         console.log(error)

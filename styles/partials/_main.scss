@@ -400,3 +400,49 @@
     color: $fourth-color;
   }
 }
+
+body {
+  transition: 0.4s ease all;
+  &.nocturno {
+    background: $Body;
+    #misGifos {
+      h1 {
+        color: $fifth-color;
+      }
+      p {
+        color: $fifth-color;
+      }
+    }
+
+    .titulo__buscador {
+      color: $fifth-color;
+    }
+    .nav__lista {
+      li {
+        span {
+          color: $third-color;
+        }
+      }
+    }
+    #trending_titulo {
+      color: $fifth-color;
+    }
+    #trending_texto {
+      color: $fifth-color;
+    }
+    .carousel {
+      background: $Carousel;
+      .titulo__carousel {
+        color: $third-color;
+      }
+      .descripcion__carousel {
+        color: $third-color;
+      }
+    }
+    .footer__contact {
+      p {
+        color: $fifth-color;
+      }
+    }
+  }
+}
