@@ -5,6 +5,8 @@ const elementBuscador = document.getElementsByClassName('buscador');
 const seccionGifosContainer = document.getElementById("misGifos");
 let listaGifs = document.getElementById('listaGifos');
 let Logo = document.getElementById("nav__logo");
+let carousel = document.getElementsByClassName("carousel");
+let seccion_crea_gifos = document.getElementsByClassName("creagifos");
 /*********************************************** */
 /**Función eliminar todos los hijos del padre */
 /*********************************************** */
@@ -17,15 +19,14 @@ const seccionIndex = () =>{
     removeAllChild(listaGifs);
     removeAllChild(favoritos);
     removeAllChild(seccionGifosContainer);
+    removeAllChild(lista_Mis_Gifos);
     limpiaBusqueda();
     search.value="";    
     btnBuscar.style.display = "block";    
     btn_borra_busqueda.style.display = "none";
     elementBuscador[0].style.display = 'block'
-
-    // elementBuscador[0].display.style = 'block'
-    // removeAllChild(favoritos);
-    // alert("hola")
+    carousel[0].style.display = "block";
+    seccion_crea_gifos[0].style.display = "none";
 }
 
 Logo.addEventListener('click', seccionIndex);
@@ -36,7 +37,10 @@ Logo.addEventListener('click', seccionIndex);
 const seccionFavoritos = ()=>{
     // removeAllChild(elementBuscador[0]);
     elementBuscador[0].style.display = 'none'
+    carousel[0].style.display = "block";
+    seccion_crea_gifos[0].style.display = "none";
     removeAllChild(seccionGifosContainer);
+    removeAllChild(lista_Mis_Gifos);
     if (localStorage.getItem('gifos') === null) {
         listaGifs.innerHTML = '';
         if (!document.querySelector(".icon_favoritos")) {
@@ -62,11 +66,10 @@ const seccionFavoritos = ()=>{
         removeAllChild(favoritos);
         vector_gifos =JSON.parse(localStorage.getItem('gifos'));        
         listaGifs.innerHTML = '';
-        vector_gifos.forEach(gif =>{
+        vector_gifos.forEach(gif => {
             listaGifs.innerHTML += `<img src=${gif.srcGifo}></img>`        
         })
     }
-
 }
 
 btnFavoritos.addEventListener('click',()=>{
@@ -80,28 +83,53 @@ btnFavoritos.addEventListener('click',()=>{
 const seccionMiGifos = ()=>{
     listaGifs.innerHTML = '';
     elementBuscador[0].style.display = 'none';
+    carousel[0].style.display = "block";
+    seccion_crea_gifos[0].style.display = "none";
     removeAllChild(favoritos);
-    if (!document.querySelector(".icon_gifos")) {  
-        let srcLogoMisGifos = "./assets/icon-mis-gifos.svg";
-        let logoMisGifos = document.createElement("img");
-        logoMisGifos.classList.add("icon_gifos");
-        logoMisGifos.src = srcLogoMisGifos;
-        let tituloMisGifos = document.createElement("h1");
-        tituloMisGifos.classList.add("titulo__gifos");
-        tituloMisGifos.innerHTML = "Mis GIFOS";
-        
-        let srcLogoSinGifos = "./assets/icon-mis-gifos-sin-contenido.svg";
-        let logoSinGifos = document.createElement("img");
-        logoSinGifos.classList.add("icon_gif_sin_contenido");
-        logoSinGifos.src = srcLogoSinGifos;
-        let descripcionMisGifos = document.createElement("p");
-        descripcionMisGifos.id = "descripcionGifos";
-        descripcionMisGifos.innerHTML = "¡Anímate a crear tu primer GIFO!"
-
-        seccionGifosContainer.append(logoMisGifos, tituloMisGifos, logoSinGifos, descripcionMisGifos);
-
+    checkLocalStorageMisGifos();    
+    if (localStorage.getItem("Mis_Gifos") === null) {
+        if (!document.querySelector(".icon_gifos")) {         
+            let srcLogoMisGifos = "./assets/icon-mis-gifos.svg";
+            let logoMisGifos = document.createElement("img");
+            logoMisGifos.classList.add("icon_gifos");
+            logoMisGifos.src = srcLogoMisGifos;
+            let tituloMisGifos = document.createElement("h1");
+            tituloMisGifos.classList.add("titulo__gifos");
+            tituloMisGifos.innerHTML = "Mis GIFOS";
+            
+            let srcLogoSinGifos = "./assets/icon-mis-gifos-sin-contenido.svg";
+            let logoSinGifos = document.createElement("img");
+            logoSinGifos.classList.add("icon_gif_sin_contenido");
+            logoSinGifos.src = srcLogoSinGifos;
+            let descripcionMisGifos = document.createElement("p");
+            descripcionMisGifos.id = "descripcionGifos";
+            descripcionMisGifos.innerHTML = "¡Anímate a crear tu primer GIFO!"
+    
+            seccionGifosContainer.append(logoMisGifos, tituloMisGifos, logoSinGifos, descripcionMisGifos);
+        }
+    }else{
+        CargarMisGifos();
     }
 
 }
 
 btnMisGifos.addEventListener('click', seccionMiGifos);
+
+/***************************** */
+/********Sección crea gifos******/
+/***************************** */
+let btn_crea_gifos = document.getElementById("nav__cta");
+const creaGifos = ()=>{
+    search.value="";
+    removeAllChild(listaGifs);
+    removeAllChild(seccionGifosContainer);
+    removeAllChild(favoritos);
+    removeAllChild(lista_Mis_Gifos);
+    btnBuscar.style.display = "none";    
+    btn_borra_busqueda.style.display = "none";
+    elementBuscador[0].style.display = 'none';
+    carousel[0].style.display = "none";
+    seccion_crea_gifos[0].style.display = "block";
+}
+
+btn_crea_gifos.addEventListener("click", creaGifos);

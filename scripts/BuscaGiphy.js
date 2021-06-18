@@ -9,7 +9,6 @@ function limpiaBusqueda(){
     btnVerMas[0].style.display = "none";
     removeAllChild(container_sin_resultados[0]);
 }
-
 function sendApiRequest(){
     let userInput = document.getElementById("search").value;
     let giphyApiKey = "hzYdEX7ReJLdcWLooF6Nem6k9IP4jk2n";
@@ -40,11 +39,8 @@ function sendApiRequest(){
                 gifContainer[0].insertAdjacentElement('beforeend', img);
             }
             btnVerMas[0].style.display = "block";
-
-        }
-        
-    });
-    
+        }        
+    });    
 }
 
 btnBuscar.addEventListener('click', () => {

@@ -12,14 +12,14 @@
         <div class="container">
             <nav class="navbar">
                 <!-- logo -->
-                <a><img src="./assets/logo-desktop.svg" alt="Logo Gifos" id="nav__logo" class="nav__logo"></a>
+                <img src="./assets/logo-desktop.svg" alt="Logo Gifos" id="nav__logo" class="nav__logo">
                 <ul class="nav__lista">
                     <li class="nav__items" id="btn-nocturno"><span>MODO NOCTURNO</span></li>
                     <li class="nav__items" id="nav_favoritos"><span>FAVORITOS</span></li>
                     <li class="nav__items" id="nav_misGifos"><span>MIS GIFOS</span></li>
                 </ul>
                 <!-- boton crear gifos -->
-                <a href="./creaTuGifo.html" class="nav__cta">
+                <a class="nav__cta" id="nav__cta">
                     <img src="./assets/button-crear-gifo.svg" alt="boton crear gifo">
                 </a>
             </nav>
@@ -47,14 +47,13 @@
             <div class="sin_resultados_container"></div>
         </section>
         <!-- Sección favoritos -->
-        <section class="favoritos container" id="favoritos">
-            
-        </section>
-        <div id="listaGifos" class="listaGifos"></div>
-        
+        <section class="favoritos container" id="favoritos"></section>
+        <div id="listaGifos" class="listaGifos"></div>        
         <!-- Sección Mis Gifos -->
-        <section class="gifos container" id="misGifos">
+        <section class="gifos container" id="misGifos">            
         </section>
+        <div class="listaMisGifos" id="listaMisGifos"></div>
+        <!-- Sección carousel -->
         <section class="carousel container">
             <div class="contenedor-titulo">
                 <h1 class="titulo__carousel">Trending GIFOS</h1>
@@ -63,18 +62,43 @@
                 </p>
             </div>
             <div class="carousel_content">
-
                 <div class="contenedor-carousel">
                     <div id="carousel" class="carousel">
                     </div>
                 </div>
-
             </div>
             <div class="flechas">
                 <button role="button" id="flecha-izquierda" class="btn-flecha"><i class="fas fa-angle-left"></i></button>
                 <button role="button" id="flecha-derecha" class="btn-flecha"><i class="fas fa-angle-right"></i></button>
             </div>
-        </section>        
+        </section>
+        <!-- Sección crear tu propio gifo -->
+        <section class="creagifos container">  
+            <h1 class="titulo__gifos">Crear GIFOS</h1>
+            <!-- logo sin gifos -->
+            <div class="rectanguloCam">
+                <div class="acceso_camara">
+                    <h1 id="titulo_creagifo" class="paso-uno">Aquí podrás <span></span>crear tus propios GIFOS</span></h1>
+                    <p>El acceso a tu camara será válido sólo</p>
+                    <p>por el tiempo en el que estés creando el GIFO.</p>
+                </div>
+                <div class="contenedor-video">
+                    <video id="video" autoplay>Video Stream no disponible</video>
+                </div>
+                
+            </div>
+            <div class="controles-camara">
+                <div class="pasos_grabacion">
+                    <label for="" class="btn_pasos_grabacion">1</label>
+                    <label for="" class="btn_pasos_grabacion">2</label>
+                    <label for="" class="btn_pasos_grabacion">3</label>
+                </div>
+                <div class="linea-horizontal"></div>
+                <div class="botones_grabacion">
+                    <label id="btn-comenzar">COMENZAR</label>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="footer container">
         <section class="footer__contact">
@@ -95,13 +119,16 @@
         </section>
     <script src="https://kit.fontawesome.com/e6fe9089da.js" crossorigin="anonymous"></script>    
     <script src="./scripts/main.js"></script>
-    <script src="./scripts/giphy.js"></script>    
+    <script src="./scripts/BuscaGiphy.js"></script>    
     <script src="./scripts/carousel.js"></script>
     <script src="./scripts/autocomplete.js"></script>
     <script src="./scripts/descargaGifo.js"></script>
     <script src="./scripts/gif_favoritos.js"></script>
     <script src="./scripts/Captura_Objetos_Click.js"></script>  
-    <script src="./scripts/modo_nocturno.js"></script>  
-    
+    <script src="./scripts/videoCapture.js"></script>
+    <script src="./scripts/modo_nocturno.js"></script>    
+    <script src="./scripts/uploadGifs.js"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="./scripts/uploadGifs.js"></script>
 </body>
 </html>

@@ -21,7 +21,6 @@
         &:hover {
           border-bottom: 1px solid $fourth-color;
           border-bottom-width: 3px;
-          // border-bottom-width: 5px;
         }
         &:active {
           color: $sixth-color;
@@ -38,6 +37,7 @@
   .nav__cta {
     img {
       margin-right: 150px;
+      cursor: pointer;
     }
   }
 }

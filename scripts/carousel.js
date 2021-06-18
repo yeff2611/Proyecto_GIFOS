@@ -1,5 +1,7 @@
 let gifContainerCarousel = document.getElementById("carousel");
 let btnFlecha = document.getElementsByClassName("btn-flecha")
+const flechaDerecha = document.getElementById('flecha-derecha');
+const flechaIzquierda = document.getElementById('flecha-izquierda');
 
 function sendApiRequestTrending(){    
     let giphyApiKey = "hzYdEX7ReJLdcWLooF6Nem6k9IP4jk2n";
@@ -39,27 +41,18 @@ function sendApiRequestTrending(){
             divIcons.insertAdjacentElement('beforeend',iconExpand);
             // console.log(json)
         }
-         btn_descarga = document.querySelector(".icon_descarga");
-        // btn_descarga.addEventListener("click", ()=>{    
-        //     let padre =  btn_descarga.parentNode;
-        //     let padreppal =  padre.parentNode;
-        //     let primerHijo =  padreppal.firstChild;
-        //     console.log(primerHijo.src)
-        // })
+        // btn_descarga = document.querySelector(".icon_descarga");
         contenido_carousel.addEventListener("click", capturaObjetosClick);
-        // contenido_carousel.addEventListener("click", descargaGif);
     });
 }
 sendApiRequestTrending();
 
 const contenedor_carousel_scroll = document.querySelector('.contenedor-carousel');
 
-const flechaDerecha = document.getElementById('flecha-derecha');
 flechaDerecha.addEventListener('click', () =>{
     contenedor_carousel_scroll.scrollLeft += contenedor_carousel_scroll.offsetWidth;
 })
 
-const flechaIzquierda = document.getElementById('flecha-izquierda');
 flechaIzquierda.addEventListener('click', () =>{
     contenedor_carousel_scroll.scrollLeft -= contenedor_carousel_scroll.offsetWidth;
 })

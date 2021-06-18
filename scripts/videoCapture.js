@@ -3,6 +3,18 @@ const btn_comenzar = document.getElementById("btn-comenzar");
 const btn_grabar = document.getElementById('btn-grabar');
 stream = {audio: false, video: {width: 1280, height: 720}};
 let giphyApiKey = "hzYdEX7ReJLdcWLooF6Nem6k9IP4jk2n";
+const usuarioGiphy = "yeffersonvargasm";
+let misGifos = [];
+
+function checkLocalStorageMisGifos(){
+    let vect_misGifos = localStorage.getItem('Mis_Gifos');
+    if (vect_misGifos === null) {
+        misGifos = [];
+    }else{
+        misGifos = JSON.parse(vect_misGifos);
+    }
+    return misGifos;
+}
 
 function startup(){
     navigator.mediaDevices.getUserMedia(stream)
@@ -25,7 +37,7 @@ function grabarGif(){
         const video = document.getElementById('video');
         video.srcObject = stream;
         video.onloadedmetadata = async function(e){
-            video.play();
+            // video.play();
             recorder = RecordRTC(stream, {
                 type: 'gif',
                 frameRate: 1,
@@ -46,8 +58,7 @@ function grabarGif(){
 
 
 async function guardaGifo(blob){    
-    let formData = new FormData();
-    const usuarioGiphy = "yeffersonvargasm";
+    let formData = new FormData();    
     formData.append('api_key', giphyApiKey);
     formData.append('username', usuarioGiphy);
     formData.append('file', blob, 'myGif.gif');
@@ -59,7 +70,14 @@ async function guardaGifo(blob){
     })
     .then(res => res.json())
     .catch(error => console.error("error: ", error))
-    .then(response => console.log("Success", response));
+    .then(response =>{
+        
+        console.log("Success", response);
+        // checkLocalStorageMisGifos();
+        misGifos.push(response.data.id);
+        localStorage.setItem('Mis_Gifos', JSON.stringify(misGifos));
+        this.video.srcObject.getTracks()[0].stop();
+    })
 }
 
 btn_comenzar.onclick = async () =>{
@@ -75,12 +93,12 @@ btn_comenzar.onclick = async () =>{
         await recorder.stopRecording();
         alert("grabación terminada");
         btn_comenzar.textContent = "SUBIR GIFO";
-        
     }
     else{        
         let blob = await recorder.getBlob();
         guardaGifo(blob);
         btn_comenzar.textContent = "COMENZAR";
+        recorder.stopRecording();
         
     }
 }

@@ -1,0 +1,64 @@
+@media (max-width: 768px) {
+  .buscador {
+    padding-left: 185px;
+    #search {
+      left: 130px;
+    }
+    #boton-buscar {
+      right: 0;
+      left: 632px;
+    }
+    #btn-borrar-busqueda {
+      left: 632px;
+    }
+  }
+  .gif__container {
+    grid-template-columns: repeat(2, 1fr);
+    right: 50px;
+  }
+  .carousel {
+    .contenedor-titulo {
+      margin-left: 22px;
+    }
+    .carousel_content {
+      left: 70px;
+      width: 645px;
+      margin: 0;
+      .contenedor-carousel {
+        #carousel {
+          .cont__img {
+            img {
+              width: 321px;
+            }
+          }
+        }
+      }
+    }
+    .flechas {
+      width: 730px;
+      left: 27px;
+    }
+  }
+
+  .footer__contact {
+    display: block;
+    position: relative;
+    left: 340px;
+    .compartir_footer {
+      margin-left: 0;
+      width: 130px;
+      padding-bottom: 15px;
+    }
+    .iconos_footer {
+      margin-right: 0;
+      width: 100px;
+      padding-bottom: 25px;
+    }
+    .copyright {
+      position: absolute;
+      right: 600px;
+      margin-right: 0;
+      width: 235px;
+    }
+  }
+}
