@@ -21,17 +21,33 @@
     }
     .nav__lista {
       position: relative;
-      right: 280px;
-      top: 70px;
+      right: 20px;
+      top: -110px;
       margin: 0;
       width: auto;
       display: inline-block;
+      transition: 0.7s ease all;
+      visibility: hidden;
+      &.animation {
+        // top: 70px;
+        transition: 0.8s ease all;
+        visibility: visible;
+        top: 70px;
+        // display: block;
+      }
       li {
         padding-bottom: 20px;
       }
     }
     .nav__cta {
       display: none;
+    }
+    .btn-hamburguer {
+      position: relative;
+      font-size: 35px;
+      right: 20px;
+      top: -5px;
+      display: block;
     }
   }
 
@@ -53,6 +69,10 @@
     #btn-borrar-busqueda {
       left: 632px;
       top: 527px;
+    }
+    .autocomplete {
+      top: 62px;
+      right: 54px;
     }
   }
   .gif__container {

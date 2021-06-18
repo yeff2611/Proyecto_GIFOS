@@ -7,6 +7,10 @@ let listaGifs = document.getElementById('listaGifos');
 let Logo = document.getElementById("nav__logo");
 let carousel = document.getElementsByClassName("carousel");
 let seccion_crea_gifos = document.getElementsByClassName("creagifos");
+let btn_Hamburguesa = document.getElementById("btn-hamburguer");
+let NavLista = document.getElementsByClassName("nav__lista");
+
+
 /*********************************************** */
 /**Función eliminar todos los hijos del padre */
 /*********************************************** */
@@ -133,3 +137,7 @@ const creaGifos = ()=>{
 }
 
 btn_crea_gifos.addEventListener("click", creaGifos);
+
+btn_Hamburguesa.addEventListener("click", ()=>{
+    NavLista[0].classList.toggle("animation");
+})
