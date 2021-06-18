@@ -1,15 +1,58 @@
 @media (max-width: 768px) {
+  /*Barra de navegación*/
+  body {
+    &.nocturno {
+      .navbar {
+        background: $Carousel;
+      }
+    }
+  }
+  header {
+    height: 220px;
+  }
+  .navbar {
+    margin-top: 0;
+    height: 250px;
+    position: relative;
+    bottom: 60px;
+    margin-bottom: 0;
+    .nav__logo {
+      margin-left: 50px;
+    }
+    .nav__lista {
+      position: relative;
+      right: 280px;
+      top: 70px;
+      margin: 0;
+      width: auto;
+      display: inline-block;
+      li {
+        padding-bottom: 20px;
+      }
+    }
+    .nav__cta {
+      display: none;
+    }
+  }
+
   .buscador {
     padding-left: 185px;
+    margin-top: 0;
+    .logo__buscador {
+      margin-top: 0;
+    }
     #search {
       left: 130px;
+      top: 520px;
     }
     #boton-buscar {
       right: 0;
       left: 632px;
+      top: 527px;
     }
     #btn-borrar-busqueda {
       left: 632px;
+      top: 527px;
     }
   }
   .gif__container {
@@ -43,7 +86,7 @@
   .footer__contact {
     display: block;
     position: relative;
-    left: 340px;
+    left: 365px;
     .compartir_footer {
       margin-left: 0;
       width: 130px;
@@ -60,5 +103,18 @@
       margin-right: 0;
       width: 235px;
     }
+  }
+
+  /*Seccion favoritos*/
+  .listaGifos {
+    grid-template-columns: repeat(2, 1fr);
+    width: 600px;
+    left: 120px;
+    right: 0;
+  }
+  .listaMisGifos {
+    grid-template-columns: repeat(2, 1fr);
+    left: 150px;
+    top: 0;
   }
 }
