@@ -8,7 +8,7 @@
 .buscador {
   padding-left: 35%;
   img {
-    margin-top: 30px;
+    margin-top: 39px;
   }
   input {
     position: absolute;
@@ -38,11 +38,17 @@
     font-size: 22px;
     display: none;
   }
+  #titulo_busqueda {
+    margin-top: 60px;
+    margin-left: 120px;
+    font-size: 32px;
+  }
+
   /*Lista autocompletar*/
   .autocomplete {
     display: none;
     position: relative;
-    top: 40px;
+    top: 36px;
     right: 65px;
     margin-left: 0;
     line-height: 25px;
@@ -409,7 +415,9 @@
 .creagifos {
   display: none;
 }
-// Modo nocturno
+/*******************************/
+/**********MODO NOCTURNO*******/
+/*******************************/
 body {
   transition: 0.4s ease all;
   &.nocturno {
@@ -422,7 +430,6 @@ body {
         color: $fifth-color;
       }
     }
-
     .titulo__buscador {
       color: $fifth-color;
     }
@@ -432,6 +439,9 @@ body {
           color: $third-color;
         }
       }
+    }
+    #titulo_busqueda {
+      color: $fifth-color;
     }
     #trending_titulo {
       color: $fifth-color;

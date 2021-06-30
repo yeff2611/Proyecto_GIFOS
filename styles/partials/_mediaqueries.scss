@@ -55,7 +55,7 @@
     padding-left: 185px;
     margin-top: 0;
     .logo__buscador {
-      margin-top: 0;
+      margin-top: 26px;
     }
     #search {
       left: 130px;
@@ -71,8 +71,11 @@
       top: 527px;
     }
     .autocomplete {
-      top: 62px;
+      top: 37px;
       right: 54px;
+    }
+    #titulo_busqueda {
+      margin-left: 165px;
     }
   }
   .gif__container {

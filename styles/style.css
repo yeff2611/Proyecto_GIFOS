@@ -89,7 +89,7 @@
 }
 
 .buscador img {
-  margin-top: 30px;
+  margin-top: 39px;
 }
 
 .buscador input {
@@ -119,10 +119,16 @@
   display: none;
 }
 
+.buscador #titulo_busqueda {
+  margin-top: 60px;
+  margin-left: 120px;
+  font-size: 32px;
+}
+
 .buscador .autocomplete {
   display: none;
   position: relative;
-  top: 40px;
+  top: 36px;
   right: 65px;
   margin-left: 0;
   line-height: 25px;
@@ -524,6 +530,9 @@
   display: none;
 }
 
+/*******************************/
+/**********MODO NOCTURNO*******/
+/*******************************/
 body {
   -webkit-transition: 0.4s ease all;
   transition: 0.4s ease all;
@@ -547,6 +556,10 @@ body.nocturno .titulo__buscador {
 
 body.nocturno .nav__lista li span {
   color: #f3f5f8;
+}
+
+body.nocturno #titulo_busqueda {
+  color: #ffff;
 }
 
 body.nocturno #trending_titulo {
@@ -667,7 +680,7 @@ body.nocturno .footer__contact p {
     margin-top: 0;
   }
   .buscador .logo__buscador {
-    margin-top: 0;
+    margin-top: 26px;
   }
   .buscador #search {
     left: 130px;
@@ -683,8 +696,11 @@ body.nocturno .footer__contact p {
     top: 527px;
   }
   .buscador .autocomplete {
-    top: 62px;
+    top: 37px;
     right: 54px;
+  }
+  .buscador #titulo_busqueda {
+    margin-left: 165px;
   }
   .gif__container {
     -ms-grid-columns: (1fr)[2];

@@ -31,6 +31,8 @@ search.addEventListener('keyup', ()=>{
     if (search.value!=="") {
         sendApiRequestTags();
         container_autocomplete[0].style.display ="block";  
+        btnBuscar.style.display = "none";
+        btn_borra_busqueda.style.display = "block";
         let li = document.getElementById("list_autocomplete")
         li.addEventListener("click", ()=>{
             console.log(li.value)
