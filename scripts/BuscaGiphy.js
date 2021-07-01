@@ -4,7 +4,6 @@ let btnBuscar = document.getElementById("boton-buscar");
 let container_sin_resultados = document.getElementsByClassName("sin_resultados_container");
 let btn_borra_busqueda = document.getElementById("btn-borrar-busqueda");
 
-// padreTituloBusqueda = tituloBusqueda.parentNode;
 function eliminaTituloBusqueda(){
     let tituloBusqueda = document.getElementById("titulo_busqueda");
     if (tituloBusqueda) {        

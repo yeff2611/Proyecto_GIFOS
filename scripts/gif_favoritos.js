@@ -23,13 +23,12 @@ function checkLocalStorage(){
 //Guarda gif en localStorage
 function guardaGif_LocalStorage(){        
     try {
-        checkLocalStorage();
-        if(classBoton === "fas fa-heart icon-fav"){
-            urlGifo = contenidoImagenes[index].src;            
+        checkLocalStorage();        
+            urlGifo = contenidoImagenes[index].src;   
             const gif = creaGifo(urlGifo);
             vector_gifos.push(gif);
             localStorage.setItem("gifos", JSON.stringify(vector_gifos));  
-        }
+        
     } catch (error) {
         console.log(error)
     }

@@ -2,7 +2,6 @@ let contenidoImagenes = document.getElementsByClassName("img_carousel");
 let contenido_carousel = document.getElementById("carousel");
 let btn_descarga
 let urlGifo; 
-// let vector_gifos = [];
 
 function descargaGif(){
     try {
@@ -26,7 +25,6 @@ let classBoton;
 let index;
 function capturaObjetosClick(e){    
     try {
-        // let btn_fav = document.querySelector
         haHechoClick = e.target
         index = haHechoClick.getAttribute("id");
         classBoton = haHechoClick.getAttribute("class");
@@ -35,7 +33,12 @@ function capturaObjetosClick(e){
             descargaGif()
         }
         /*Guarda gif en favoritos*/
-        guardaGif_LocalStorage();
+        else if(classBoton === "fas fa-heart icon-fav"){
+            guardaGif_LocalStorage();
+        }
+        else{
+            FullScreen();
+        }
     } catch (error) {
         console.log(error)
     }

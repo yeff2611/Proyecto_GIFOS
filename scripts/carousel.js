@@ -3,6 +3,7 @@ let btnFlecha = document.getElementsByClassName("btn-flecha")
 const flechaDerecha = document.getElementById('flecha-derecha');
 const flechaIzquierda = document.getElementById('flecha-izquierda');
 
+
 function sendApiRequestTrending(){    
     let giphyApiKey = "hzYdEX7ReJLdcWLooF6Nem6k9IP4jk2n";
     let giphyApiURL = `https://api.giphy.com/v1/gifs/trending?api_key=${giphyApiKey}`;
@@ -11,7 +12,6 @@ function sendApiRequestTrending(){
     })
     .then(function(json){        
         for (let i = 0; i < 24; i++) {
-            // let random = parseInt(Math.random() * 50);
             let imgPath = json.data[i].images.fixed_height.url;
             let divImg = document.createElement("div");
             divImg.classList.add('cont__img');
@@ -30,18 +30,20 @@ function sendApiRequestTrending(){
             iconDescarga.id=i;//"icon_descarga";
             iconFavoritos.id=i;
             let iconExpand = document.createElement('a');
-            iconExpand.classList.add('fas','fa-expand-alt');
-
+            iconExpand.classList.add('fas','fa-expand-alt', 'icon_fullScreen');
+            iconExpand.id = i;
+            if(classBoton === "fas fa-expand-alt icon_fullScreen"){
+                full_screen[0].insertAdjacentElement('beforeend', divImg)
+            }else{
+                gifContainerCarousel.insertAdjacentElement('beforeend', divImg);
+            }
             
-            gifContainerCarousel.insertAdjacentElement('beforeend', divImg);
             divImg.insertAdjacentElement('beforeend', img);
             divImg.insertAdjacentElement('beforeend', divIcons);
             divIcons.insertAdjacentElement('beforeend',iconFavoritos);
             divIcons.insertAdjacentElement('beforeend', iconDescarga);
             divIcons.insertAdjacentElement('beforeend',iconExpand);
-            // console.log(json)
         }
-        // btn_descarga = document.querySelector(".icon_descarga");
         contenido_carousel.addEventListener("click", capturaObjetosClick);
     });
 }
