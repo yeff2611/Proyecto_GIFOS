@@ -206,10 +206,14 @@
         font-size: 25px;
         padding: 1.5px;
         margin-right: 5px;
-        // opacity: 0.5;
         text-align: center;
         border: 1px solid $primary-color;
         border-radius: 6px;
+        cursor: pointer;
+        &:hover {
+          background: $primary-color;
+          color: white;
+        }
       }
     }
     img {

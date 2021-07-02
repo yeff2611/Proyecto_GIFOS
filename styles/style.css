@@ -322,6 +322,12 @@
   text-align: center;
   border: 1px solid #572ee5;
   border-radius: 6px;
+  cursor: pointer;
+}
+
+.full_screen .fullscreen .icons_full_screen a:hover {
+  background: #572ee5;
+  color: white;
 }
 
 .full_screen .fullscreen img {
