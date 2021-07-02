@@ -36,7 +36,7 @@ function capturaObjetosClick(e){
         else if(classBoton === "fas fa-heart icon-fav"){
             guardaGif_LocalStorage();
         }
-        else{
+        else if(classBoton === "fas fa-expand-alt icon_fullScreen"){
             FullScreen();
         }
     } catch (error) {

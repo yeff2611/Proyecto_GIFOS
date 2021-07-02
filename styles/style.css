@@ -658,6 +658,10 @@ body.nocturno .footer__contact p {
   color: #ffff;
 }
 
+body.nocturno .full_screen {
+  background: #37383c;
+}
+
 .footer {
   padding: 50px 0 50px 0;
 }
@@ -828,6 +832,18 @@ body.nocturno .footer__contact p {
         grid-template-columns: repeat(2, 1fr);
     left: 150px;
     top: 0;
+  }
+  .full_screen {
+    width: 700px;
+    left: 40px;
+  }
+  .full_screen .fullscreen {
+    width: 630px;
+    margin-left: 90px;
+  }
+  .full_screen .fullscreen img {
+    width: 520px;
+    margin-left: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
